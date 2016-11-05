@@ -1,7 +1,5 @@
 package com.vlado;
 
-import sun.jvm.hotspot.utilities.Assert;
-
 import java.util.Arrays;
 
 /**
