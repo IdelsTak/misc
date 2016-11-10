@@ -6,6 +6,13 @@ import java.util.Queue;
 
 public class SerializeTree {
 
+//         2
+//        / \
+//       7   5
+//      / \   \
+//     3   6   9
+//            /
+//           4
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(2);
