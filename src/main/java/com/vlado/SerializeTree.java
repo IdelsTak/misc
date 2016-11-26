@@ -27,7 +27,9 @@ public class SerializeTree {
 
 //        System.out.println(serialize(root));
 
-        System.out.println(serialize(deserialize(serialize(deserialize("2,7,5,3,6,null,9,4,null")))));
+//        System.out.println(serialize(deserialize(serialize(deserialize("2,7,5,3,6,null,9,4,null")))));
+//        System.out.println(serialize(deserialize(serialize(deserialize("null")))));
+        System.out.println(serialize(deserialize(serialize(deserialize("3,2,4,1")))));
     }
 
     public static String serialize(TreeNode root) {
@@ -52,7 +54,13 @@ public class SerializeTree {
             queue.add(poll.right);
         }
 
-        return sb.substring(0, sb.length() - 1).toString();
+        String commaless = sb.substring(0, sb.length() - 1);
+
+        if (commaless.endsWith(",null")) {
+            commaless = commaless.substring(0, commaless.lastIndexOf(",null"));
+        }
+
+        return commaless;
     }
 
     public static TreeNode deserialize(String input) {
@@ -62,12 +70,15 @@ public class SerializeTree {
         TreeNode tempNode = null;
         for (int i = 0; i < segments.length; i++) {
             String segment = segments[i];
+            Integer val = segment.equals("null") ? null : Integer.parseInt(segment);
             if (i == 0) {
-                currentNode = new TreeNode(Integer.parseInt(segment));
+                if (val == null) {
+                    break;
+                }
+                currentNode = new TreeNode(val);
                 root = currentNode;
                 continue;
             }
-            Integer val = segment.equals("null") ? null : Integer.parseInt(segment);
             if (i % 2 == 0) {
                 //right
                 if (val == null) {
