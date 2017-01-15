@@ -1,5 +1,7 @@
 package com.vlado.linkedlist;
 
+import java.util.Stack;
+
 /**
  * Check if a linked list is a palindrome
  */
@@ -8,6 +10,36 @@ public class Palindrome {
     public static void main(String[] args) {
         System.out.println(new Palindrome().isPalindrome(arrayToLinkedList(0, 1, 2, 1, 0))); //true
         System.out.println(new Palindrome().isPalindrome(arrayToLinkedList(0, 1, 2, 2, 0))); //false
+
+        System.out.println(new Palindrome().isPalindromeIterative(arrayToLinkedList(0, 1, 2, 1, 0))); //true
+        System.out.println(new Palindrome().isPalindromeIterative(arrayToLinkedList(0, 1, 2, 2, 0))); //false
+    }
+
+    boolean isPalindromeIterative(LinkedListNode head) {
+        LinkedListNode fast = head;
+        LinkedListNode slow = head;
+
+        Stack<Integer> stack = new Stack<>();
+
+        while (fast.next != null && fast.next.next != null) {
+            stack.push(slow.data);
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        if (fast != null) {
+            slow = slow.next;
+        }
+
+        while (slow != null) {
+            int top = stack.pop();
+            if (top != slow.data) {
+                return false;
+            }
+            slow = slow.next;
+        }
+
+        return true;
     }
 
     boolean isPalindrome(LinkedListNode head) {
