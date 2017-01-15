@@ -5,8 +5,8 @@ package com.vlado.linkedlist;
  * <p>
  * Intersecting lists:
  * 3 -> 1 -> 5 -> 9 -> 7 -> 2 -> 1
- * /
- * 4 -> 6
+ *                    /
+ *              4 -> 6
  */
 public class Intersection {
 
