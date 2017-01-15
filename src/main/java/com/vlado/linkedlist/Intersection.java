@@ -2,7 +2,7 @@ package com.vlado.linkedlist;
 
 /**
  * Determine if two singly linked lists intersect (by reference)
- * <p>
+ *
  * Intersecting lists:
  * 3 -> 1 -> 5 -> 9 -> 7 -> 2 -> 1
  *                    /
