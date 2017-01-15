@@ -13,6 +13,7 @@ public class KthToLast {
         LinkedListNode p1 = head;
         LinkedListNode p2 = head;
 
+        //Place references k nodes apart from each other
         for (int i = 0; i < k; i++) {
             if (p1 == null) {
                 //Out of bounds
@@ -21,6 +22,7 @@ public class KthToLast {
             p1 = p1.next;
         }
 
+        //Move until p1 hits the end
         while (p1 != null) {
             p1 = p1.next;
             p2 = p2.next;
