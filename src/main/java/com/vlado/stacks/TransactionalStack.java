@@ -1,4 +1,4 @@
-package com.vlado;
+package com.vlado.stacks;
 
 import java.util.Stack;
 
