@@ -1,5 +1,9 @@
 package com.vlado.trees;
 
+/**
+ * Given a sorted array, with unique integers,
+ * write an algorithm to create a binary search tree
+ */
 public class MinimalTree {
 
     public static void main(String[] args) {
