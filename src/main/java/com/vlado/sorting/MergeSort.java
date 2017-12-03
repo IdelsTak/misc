@@ -1,9 +1,9 @@
-package com.vlado;
+package com.vlado.sorting;
 
 import java.util.Arrays;
 
 /**
- * Created by vdimitrov on 10/26/16.
+ * Not optimal
  */
 public class MergeSort {
 

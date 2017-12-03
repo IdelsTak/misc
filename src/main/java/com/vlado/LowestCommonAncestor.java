@@ -17,8 +17,8 @@ public class LowestCommonAncestor {
             return p;
         }
 
-        Deque<TreeNode> stack = new ArrayDeque();
-        Map<TreeNode, TreeNode> nodes = new HashMap();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        Map<TreeNode, TreeNode> nodes = new HashMap<>();
         stack.add(root);
 
         while(!stack.isEmpty()) {
